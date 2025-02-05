@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content%}
+    <h1> Users Profile </h1>
+
+    <h3>
+        {% if user["is_logged_in"] %}
+            je prihlaseny
+        {% else %}
+            je odhlaseny
+        {% endif %}
+    </h3>
+
+    <h2> Name: {{ user["name"] }}  Email: {{ user["email"] }} </h2>
+
+
+{% endblock %}
