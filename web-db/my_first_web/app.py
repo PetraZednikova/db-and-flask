@@ -1,19 +1,19 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/')    #decorater
 def home():
-    return "Hello Flask!"
+    return render_template("home.html") # výstup
 
 @app.route('/about')
 def about():
-    return "Hello About!"
+    return render_template("about.html")
 
 @app.route('/contact')
 def contact():
-    return "Hello Contact!"
+    return render_template("contact.html")
 
 
 if __name__=="__main__":
