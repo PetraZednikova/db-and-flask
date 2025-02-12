@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
-{% block content%}
-    <h1> Users List </h1>
+{% block content %}
+    <h1>Users List Page</h1>
+
     <ol>
         {% for user in users %}
+            <a href="/user_detail/{{ user['íd'] }} >
+                <li>{{ user['name'] }} - {{ user['email'] }} </li>
 
-            <li> {{ user["name"] }} - {{ user["email"] }} </li>
-
+            </a>
 
         {% endfor %}
     </ol>

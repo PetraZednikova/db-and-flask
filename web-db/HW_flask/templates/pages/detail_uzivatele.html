@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content%}
+    <h1> Detail uživatele: </h1>
+
+
+    <h2> Jméno: {{ user["name"] }}
+        Email: {{ user["email"] }}
+        Role: {{ user["role"] }} </h2>
+
+
+{% endblock %}

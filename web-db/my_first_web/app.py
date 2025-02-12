@@ -23,13 +23,13 @@ def calculator(a, b):
     #b = 20
     return render_template("pages/calc.html", a=a, b=b, suma= a+b)
 
-@app.route("/users")
-def user_list():
+@app.route("/users_list")
+def users_list():
     return render_template("pages/users_list.html", users=users)
 
-@app.route("/users/<int:id>")
-def user_detail(id):
-    return render_template("pages/users_detail.html", user=users[id])
+@app.route("/user_detail/<int:id>")
+def users_detail(id):
+    return render_template("pages/user_detail.html", user=users[id])
 
 @app.route("/mes", methods=["GET", "POST"])
 def chat():

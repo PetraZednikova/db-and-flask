@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Průvodci ve Svobodné zemi</h1>
+
+    <ol>
+        {% for user in users %}
+            <li>
+                <a href="/detail_uzivatele/{{ user.id }}">
+                    {{ user.name }} - {{ user.role }}
+                </a>
+            </li>
+        {% endfor %}
+    </ol>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Jméno</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Detail</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.role }}</td>
+                    <td>{{ user.area }}</td>
+                    <td><a href="{{ url_for('detail_uzivatele', id=user.id) }}">Detail</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
